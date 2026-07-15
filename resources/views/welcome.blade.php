@@ -14,33 +14,39 @@
     <body>
         <header class="h-18.75 bg-white">
             <div class="flex items-center justify-between mx-48 py-4 px-10">
-                <div>
-                    <span class="font-space">Fém</span><span>.</span>
+                <div class="font-space">
+                    <span class="text-[#16161A] text-[21px] font-bold">FÉM</span><span class="text-[#6D48FF]">.</span>
                 </div>
-                <nav class="flex gap-8 font-ibmsans font-normal text-12 text-[#46464D] tracking-[1.2px]">
+                <nav class="flex gap-8 font-ibmsans font-normal text-[12px] text-[#46464D] tracking-[1.2px]">
                     <a>Munkáink</a>
                     <a>Stúdió</a>
                     <a>Folyamat</a>
                 </nav>
-                <div class="font-ibmmono font-normal text-12 tracking-[0.96px]">
-                    <button>Kapcsolat</button>
+                <div>
+                    <button class="font-ibmmono font-normal text-[12px] tracking-[0.96px] text-white bg-[#16161A] h-11 w-26">Kapcsolat</button>
                 </div>
             </div>
         </header>
         <main>
-            <section>
-                <div>
-                    <div>Tárgyak, amelyek kiállják az idő próbáját</div>
-                    <div>Letisztult ipari formatervezés a koncepciótól a sorozatgyártásig - felesleges díszítés nélkül.</div>
-                    <div class="flex">
-                        <button>Kezdjük a tervezést</button>
-                        <button>A stúdióról</button>
+            <section class="relative w-full max-w-[1920px] h-[780px] flex items-center overflow-hidden mx-auto px-48">
+                <img src="{{ asset('storage/' . $hero->background_image) }}" 
+                     alt="FÉM Hero" 
+                     class="absolute inset-0 w-full h-full object-cover object-top z-0">
+
+                <div class="absolute inset-0 bg-black/40 z-[1]"></div>
+
+                <div class="relative z-10">
+                    <h1 class="font-space text-[66px] font-bold max-w-200 text-[#FFFFFF] leading-none">{{ $hero->title }}</h1>
+                    <div class="font-ibmsans text-[19px] text-white/76 max-w-150 tracking-[0.96px] pt-6">{{ $hero->description }}</div>
+                    <div class="flex gap-4 mt-8">
+                        <button class="bg-white text-[#16161A] font-ibmmono font-normal text-[12px] px-8 py-3 tracking-[0.96px]">Kezdjük a tervezést</button>
+                        <button class="border border-white/40 text-white font-ibmmono font-normal text-[12px] px-5 py-3 tracking-[0.96px]">A stúdióról</button>
                     </div>
                 </div>
             </section>
             <section>
                 <div>
-                    <h2>Munkáink</h2>
+                    <h2 class="text-[44px] text-[#16161A] font-space font-bold">Munkáink</h2>
                     <hr>
                     <!-- TODO: iterálni a képeken majd backendből, egyelőre placeholder -->
                     <div>

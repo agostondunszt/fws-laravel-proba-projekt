@@ -6,9 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class HeroContent extends Model
 {
-    protected $fillabe = [
+    protected $fillable = [
         'title',
         'description',
-        'background_image'
+        'background_image',
+        'id'
     ];
 }
