@@ -33,26 +33,27 @@
                      alt="FÉM Hero" 
                      class="absolute inset-0 w-full h-full object-cover object-top z-0">
 
-                <div class="absolute inset-0 bg-black/40 z-[1]"></div>
+                <img src="{{ asset('storage/hero/gradient.png') }}" 
+                     alt="Overlay" 
+                     class="absolute inset-0 w-full h-full object-cover z-[1] opacity-100">
 
                 <div class="relative z-10">
                     <h1 class="font-space text-[66px] font-bold max-w-200 text-[#FFFFFF] leading-none">{{ $hero->title }}</h1>
-                    <div class="font-ibmsans text-[19px] text-white/76 max-w-150 tracking-[0.96px] pt-6">{{ $hero->description }}</div>
+                    <div class="font-ibmsans text-[18px] text-white/76 max-w-140 tracking-[0.6px] pt-6">{{ $hero->description }}</div>
                     <div class="flex gap-4 mt-8">
-                        <button class="bg-white text-[#16161A] font-ibmmono font-normal text-[12px] px-8 py-3 tracking-[0.96px]">Kezdjük a tervezést</button>
-                        <button class="border border-white/40 text-white font-ibmmono font-normal text-[12px] px-5 py-3 tracking-[0.96px]">A stúdióról</button>
+                        <button class="bg-white text-[#16161A] font-ibmmono font-normal text-[12px] px-6 py-3 tracking-[0.96px]">Kezdjük a tervezést</button>
+                        <button class="border border-white/40 text-white font-ibmmono font-normal text-[12px] px-4 py-3 tracking-[0.96px]">A stúdióról</button>
                     </div>
                 </div>
             </section>
             <section>
-                <div>
+                <div class="px-48 pt-21">
                     <h2 class="text-[44px] text-[#16161A] font-space font-bold">Munkáink</h2>
-                    <hr>
-                    <!-- TODO: iterálni a képeken majd backendből, egyelőre placeholder -->
-                    <div>
-                        <img alt="kép alt">
-                        <div>dátum</div>
-                        <div>cím</div>
+                    <hr class="border-[#E4E4E0] mb-10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+                        @foreach ($references as $reference)
+                            <x-reference-card :reference="$reference" />
+                        @endforeach
                     </div>
                 </div>
             </section>
