@@ -10,6 +10,8 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Filament\Forms\Get;
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -34,6 +36,17 @@ class ReferenceResource extends Resource
                 Forms\Components\FileUpload::make('image_path')
                     ->label('Kép')
                     ->image()
+                    ->imageEditor()
+                    ->imageResizeMode('cover')
+                    ->imageCropAspectRatio('1200:840')
+                    ->imageResizeTargetWidth('1200')
+                    ->imageResizeTargetHeight('840')
+                    ->getUploadedFileNameForStorageUsing(function (Get $get, $file) {
+                        $title = $get('title') ? Str::slug($get('title')) : 'referencia';
+                        $extension = $file->getClientOriginalExtension();
+
+                        return "{$title}-" . uniqid() . ".{$extension}";
+                    })
                     ->required()
             ]);
     }
