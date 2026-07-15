@@ -47,7 +47,7 @@
                 </div>
             </section>
             <section>
-                <div class="px-48 pt-21">
+                <div class="px-48 py-21">
                     <h2 class="text-[44px] text-[#16161A] font-space font-bold">Munkáink</h2>
                     <hr class="border-[#E4E4E0] mb-10">
                     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
@@ -58,16 +58,38 @@
                 </div>
             </section>
         </main>
-        <footer>
-            <div>
-                <div>
-                    <div>teszt</div>
-                    <div>teszt</div>
-                    <div>teszt</div>
+        <footer class="bg-[#16161A]">
+            <div class="px-58 pt-18">
+                <div class="border-b border-white/12 flex justify-between pb-14">
+                    <div class="flex-1 max-w-[640px]">
+                        <div class="flex pb-6">
+                            <div class="font-space text-[24px] font-bold text-white">FÉM</div><span class="font-space text-[#6D4BFF] font-bold">.</span>
+                        </div>
+                        <div class="text-[14.5px] text-[#8D8D96] font-ibmsans">
+                            Ipari formatervező stúdió Budapesten.
+                        </div>
+                    </div>
+                    <div class="flex-1 max-w-[360px]">
+                        <div class="text-[#75757E] text-[11px] tracking-[1.54px] font-ibmmono pb-4">Menü</div>
+                        <ul class="text-[#C2C2C8] text-[14.5px] font-ibmsans flex flex-col gap-4">
+                            <li>Munkáink</li>
+                            <li>Stúdió</li>
+                            <li>Folyamat</li>
+                            <li>Kapcsolat</li>
+                        </ul>
+                    </div>
+                    <div class="flex-1 max-w-[360px]">
+                        <div class="text-[#75757E] text-[11px] tracking-[1.54px] font-ibmmono pb-4">Kapcsolat</div>
+                        <div class="text-[#C2C2C8] text-[14.5px] font-ibmsans">
+                            <div>1061 Budapest Fém utca 99.</div>
+                            <div>studio@fem.hu</div>
+                            <div>+36 1 234 5678</div>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <div>2026 fém stúdió</div>
-                    <div>
+                <div class="flex justify-between py-7">
+                    <div class="font-ibmmono text-[11.5px] tracking-[1.61px] text-[#75757E]">&copy; 2026 FÉM Stúdió — Minden jog fenntartva</div>
+                    <div class="text-[#8D8D96] text-[11px] tracking-[0.88px] font-ibmmono flex gap-6">
                         <a>Adatvédelem</a>
                         <a>Impresszum</a>
                     </div>
