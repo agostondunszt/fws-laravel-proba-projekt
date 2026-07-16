@@ -29,8 +29,15 @@ class HeroSettings extends Page implements HasForms
     {
         return $form
             ->schema([
-                TextInput::make('title')->label('Főcím')->required(),
-                Textarea::make('description')->label('Leírás')->required()->rows(4),
+                TextInput::make('title')
+                    ->label('Főcím')
+                    ->required()
+                    ->validationMessages(['required' => 'A főcím megadása kötelező.']),
+                Textarea::make('description')
+                    ->label('Leírás')
+                    ->required()
+                    ->rows(4)
+                    ->validationMessages(['required' => 'A leírás megadása kötelező.']),
                 FileUpload::make('background_image')
                     ->label('Háttérkép')
                     ->image()
@@ -40,6 +47,9 @@ class HeroSettings extends Page implements HasForms
                     ->imageResizeTargetWidth('1920')
                     ->imageResizeTargetHeight('780')
                     ->directory('hero')
+                    ->validationMessages([
+                        'required' => 'A cím megadása kötelező.',
+                    ])
                     ->required(),
             ])
             ->statePath('data');

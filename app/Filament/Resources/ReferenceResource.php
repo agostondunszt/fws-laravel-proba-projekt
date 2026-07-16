@@ -25,11 +25,16 @@ class ReferenceResource extends Resource
                 Forms\Components\TextInput::make('title')
                     ->label('Cím')
                     ->required()
-                    ->maxLength(255),
+                    ->maxLength(255)
+                    ->validationMessages([
+                        'required' => 'A cím megadása kötelező.',
+                        'max' => 'A cím túl hosszú (maximum 255 karakter).',
+                    ]),
                 Forms\Components\DatePicker::make('project_date')
                     ->label('Dátum')
                     ->default(date('Y-m-d'))
-                    ->required(),
+                    ->required()
+                    ->validationMessages(['required' => 'A dátum kiválasztása kötelező.']),
                 Forms\Components\FileUpload::make('image_path')
                     ->label('Kép')
                     ->image()
@@ -45,6 +50,7 @@ class ReferenceResource extends Resource
                         return "{$title}-" . uniqid() . ".{$extension}";
                     })
                     ->required()
+                    ->validationMessages(['required' => 'A kép feltöltése kötelező.'])
             ]);
     }
 
