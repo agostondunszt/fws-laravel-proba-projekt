@@ -34,6 +34,11 @@ class HeroSettings extends Page implements HasForms
                 FileUpload::make('background_image')
                     ->label('Háttérkép')
                     ->image()
+                    ->imageEditor()
+                    ->imageResizeMode('cover')
+                    ->imageCropAspectRatio('1920:780')
+                    ->imageResizeTargetWidth('1920')
+                    ->imageResizeTargetHeight('780')
                     ->directory('hero')
                     ->required(),
             ])
