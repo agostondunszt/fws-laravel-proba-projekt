@@ -3,19 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreContactMessageRequest;
-use App\Models\ContactMessage;
+use App\Services\ContactService;
 
 class ContactController extends Controller
 {
-    public function store(StoreContactMessageRequest $request)
+    public function store(StoreContactMessageRequest $request, ContactService $service)
     {
-        $validatedData = $request->validated();
-
-        $contactMessage = ContactMessage::create($validatedData);
-
+        $service->process($request->validated());
+        
         return response()->json([
             'success' => true,
-            'message' => 'Köszönjük! Az üzenetet sikeresen megkaptuk, hamarosan jelentkezünk.'
+            'message' => 'Köszönjük! Az üzenetet sikeresen megkaptuk.'
         ]);
     }
 }

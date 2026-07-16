@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ReferenceResource\Pages;
-use App\Filament\Resources\ReferenceResource\RelationManagers;
 use App\Models\Reference;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -12,8 +11,6 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Filament\Forms\Get;
 use Illuminate\Support\Str;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class ReferenceResource extends Resource
 {
