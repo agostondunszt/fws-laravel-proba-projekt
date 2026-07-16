@@ -11,7 +11,7 @@
         {{ \Carbon\Carbon::parse($reference->project_date)->format('Y.m.d') }}
     </div>
     
-    <h3 class="text-[19px] font-space font-medium text-[#16161A] mt-2">
+    <h3 class="text-[19px] font-space font-medium text-[#16161A] mt-2 truncate w-full">
         {{ $reference->title }}
     </h3>
 </div>
