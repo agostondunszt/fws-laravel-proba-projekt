@@ -22,7 +22,6 @@ class SendContactEmail implements ShouldQueue
      */
     public function handle(ContactFormSubmitted $event): void
     {
-        // Use the .env variable here
         $recipient = env('CONTACT_FORM_RECIPIENT', 'default@example.com');
 
         Mail::to($recipient)->send(new ContactFormMail($event->data));

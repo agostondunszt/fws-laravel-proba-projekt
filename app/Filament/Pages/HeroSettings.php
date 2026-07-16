@@ -16,7 +16,10 @@ class HeroSettings extends Page implements HasForms
     use InteractsWithForms;
 
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
-    protected static ?string $navigationLabel = 'Hero Settings';
+    protected static ?string $navigationLabel = 'Hero Beállítások';
+    protected static ?string $modelLabel = 'Hero Beállítások';
+    protected static ?string $pluralModelLabel = 'Hero Beállítások';
+
     protected static string $view = 'filament.pages.hero-settings';
     public ?array $data = [];
 
@@ -24,13 +27,25 @@ class HeroSettings extends Page implements HasForms
     {
         $this->form->fill(HeroContent::first()?->toArray() ?? []);
     }
+    
+    public function getTitle(): string
+    {
+        return 'Hero beállítások';
+    }
 
     public function form(Form $form): Form
     {
         return $form
             ->schema([
-                TextInput::make('title')->label('Főcím')->required(),
-                Textarea::make('description')->label('Leírás')->required()->rows(4),
+                TextInput::make('title')
+                    ->label('Főcím')
+                    ->required()
+                    ->validationMessages(['required' => 'A főcím megadása kötelező.']),
+                Textarea::make('description')
+                    ->label('Leírás')
+                    ->required()
+                    ->rows(4)
+                    ->validationMessages(['required' => 'A leírás megadása kötelező.']),
                 FileUpload::make('background_image')
                     ->label('Háttérkép')
                     ->image()
@@ -40,6 +55,9 @@ class HeroSettings extends Page implements HasForms
                     ->imageResizeTargetWidth('1920')
                     ->imageResizeTargetHeight('780')
                     ->directory('hero')
+                    ->validationMessages([
+                        'required' => 'A cím megadása kötelező.',
+                    ])
                     ->required(),
             ])
             ->statePath('data');

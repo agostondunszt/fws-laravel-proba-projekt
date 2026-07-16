@@ -26,4 +26,15 @@ class ContactModal extends Component
     {
         return view('livewire.contact-modal');
     }
+    protected function messages()
+    {
+        return [
+            'name.required' => 'Kérlek, add meg a neved.',
+            'name.min' => 'A név legalább 3 karakter hosszú legyen.',
+            'email.required' => 'Az email cím megadása kötelező.',
+            'email.email' => 'Érvénytelen email formátum.',
+            'message.required' => 'Kérlek, írj egy üzenetet.',
+            'message.min' => 'Az üzenet túl rövid.',
+        ];
+    }
 }
