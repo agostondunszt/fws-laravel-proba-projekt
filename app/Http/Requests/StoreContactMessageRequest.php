@@ -28,4 +28,17 @@ class StoreContactMessageRequest extends FormRequest
             'message' => ['required', 'string', 'max:5000'],
         ];
     }
+    public function messages(): array
+    {
+        return [
+            'name.required' => 'Kérlek, add meg a neved.',
+            'name.string' => 'A névnek szöveget kell tartalmaznia.',
+            'name.max' => 'A név túl hosszú.',
+            'email.required' => 'Az email cím megadása kötelező.',
+            'email.email' => 'Érvénytelen email formátum.',
+            'message.required' => 'Kérlek, írj egy üzenetet.',
+            'message.string' => 'Az üzenetnek szöveget kell tartalmaznia.',
+            'message.max' => 'Az üzenet túl hosszú.'
+        ];
+    }
 }
