@@ -57,3 +57,6 @@ php artisan queue:work
 ## Usage
 * Access the website at `http://localhost:8000` (or at the port you've provided)
 * Access the admin page at `http://localhost:8000/admin` (or at the port you've provided). The seeded credentials are: `admin@admin.com` with `password` as password.
+
+An image of the mailing service working when tested using Mailtrap:
+<img width="1299" height="487" alt="image" src="https://github.com/user-attachments/assets/33099c9f-369f-49f0-9148-9c17f9e87b4f" />
