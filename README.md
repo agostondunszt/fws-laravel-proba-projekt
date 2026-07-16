@@ -11,7 +11,7 @@ Created for fws as a test project.
 ## Running the app
 ### 1. Clone the repository
 ```bash
-git clone [https://github.com/agostondunszt/fws-laravel-proba-projekt.git](https://github.com/agostondunszt/fws-laravel-proba-projekt.git)
+git clone https://github.com/agostondunszt/fws-laravel-proba-projekt.git
 cd fws-laravel-proba-projekt
 ```
 
