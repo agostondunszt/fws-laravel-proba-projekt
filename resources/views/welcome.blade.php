@@ -23,7 +23,8 @@
                     <a>Folyamat</a>
                 </nav>
                 <div>
-                    <button class="font-ibmmono font-normal text-[12px] tracking-[0.96px] text-white bg-[#16161A] h-11 w-26">Kapcsolat</button>
+                    <livewire:contact-modal />
+                    <!-- <button class="font-ibmmono font-normal text-[12px] tracking-[0.96px] text-white bg-[#16161A] h-11 w-26">Kapcsolat</button> -->
                 </div>
             </div>
         </header>

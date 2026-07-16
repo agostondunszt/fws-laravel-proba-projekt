@@ -3,9 +3,7 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
-use Illuminate\Mail\Mailables\Attachment;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
@@ -28,7 +26,7 @@ class ContactFormMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Új kapcsolati levél' . $this->data['name'],
+            subject: "Új kapcsolati levél - {$this->data['name']}",
             replyTo: [new \Illuminate\Mail\Mailables\Address($this->data['email'], $this->data['name'])],
         );
     }
@@ -44,7 +42,7 @@ class ContactFormMail extends Mailable
     /**
      * Get the attachments for the message.
      *
-     * @return array<int, Attachment>
+     * @return array<int>
      */
     public function attachments(): array
     {
