@@ -34,7 +34,7 @@
                      alt="FÉM Hero" 
                      class="absolute inset-0 w-full h-full object-cover object-top z-0">
 
-                <img src="{{ asset('storage/hero/gradient.png') }}" 
+                <img src="{{ asset('images/gradient.png') }}" 
                      alt="Overlay" 
                      class="absolute inset-0 w-full h-full object-cover z-1 opacity-100">
 
