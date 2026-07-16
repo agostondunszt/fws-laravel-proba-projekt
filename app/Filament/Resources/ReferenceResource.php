@@ -15,7 +15,9 @@ use Illuminate\Support\Str;
 class ReferenceResource extends Resource
 {
     protected static ?string $model = Reference::class;
-
+    protected static ?string $navigationLabel = 'Referenciák';
+    protected static ?string $modelLabel = 'Referencia';
+    protected static ?string $pluralModelLabel = 'Referenciák';
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form

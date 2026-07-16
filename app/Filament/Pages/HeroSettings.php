@@ -16,13 +16,21 @@ class HeroSettings extends Page implements HasForms
     use InteractsWithForms;
 
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
-    protected static ?string $navigationLabel = 'Hero Settings';
+    protected static ?string $navigationLabel = 'Hero Beállítások';
+    protected static ?string $modelLabel = 'Hero Beállítások';
+    protected static ?string $pluralModelLabel = 'Hero Beállítások';
+
     protected static string $view = 'filament.pages.hero-settings';
     public ?array $data = [];
 
     public function mount(): void
     {
         $this->form->fill(HeroContent::first()?->toArray() ?? []);
+    }
+    
+    public function getTitle(): string
+    {
+        return 'Hero beállítások';
     }
 
     public function form(Form $form): Form
