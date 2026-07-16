@@ -36,7 +36,7 @@
 
                 <img src="{{ asset('images/gradient.png') }}" 
                      alt="Overlay" 
-                     class="absolute inset-0 w-full h-full object-cover z-1 opacity-100">
+                     class="absolute inset-0 w-full h-full object-cover z-1 opacity-100 pointer-events-none">
 
                 <div class="relative z-10">
                     <h1 class="font-space text-[66px] font-bold max-w-200 text-[#FFFFFF] leading-none">{{ $hero->title }}</h1>
